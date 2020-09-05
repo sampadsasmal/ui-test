@@ -1,0 +1,24 @@
+<div class="container">
+  <form [formGroup]="signinForm" (ngSubmit)="onSubmit()" class="login-form">
+    <div class="full-width">
+      <h3>Sign in</h3>
+      <mat-form-field class="input-width">
+        <mat-label>User name</mat-label>
+        <input matInput formControlName="username">
+        <mat-error *ngIf="fetchData.username.errors && fetchData.username.errors.required">
+          Username is required
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="input-width m-b-20">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" type="password">
+        <mat-error *ngIf="fetchData.password.errors && fetchData.password.errors.required">
+          Password is required
+        </mat-error>
+      </mat-form-field>
+      <div class="d-block">
+        <button type="submit" [disabled]="!signinForm" mat-flat-button color="primary" class="m-t-20">Sign in </button>
+      </div>
+    </div>
+  </form>
+</div>

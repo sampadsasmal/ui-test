@@ -1,0 +1,39 @@
+<div class="container m-t-60">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="d-flex">
+        <button mat-icon-button class="m-b-20" [routerLink] = "['/dashboard']">
+          <mat-icon>keyboard_backspace</mat-icon>
+        </button>
+        <h3 class="m-l-10"> Add Customer Details</h3>
+      </div>
+      <form [formGroup]="customerForm" (ngSubmit)="onSubmit()">
+        <div class="full-width">
+          <mat-form-field class="input-width m-b-15">
+            <mat-label>Customer Name</mat-label>
+            <input matInput formControlName="name">
+            <mat-error *ngIf="fetchData.name.errors && fetchData.name.errors.required">
+              Customer name is required
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="input-width">
+            <mat-label>Age</mat-label>
+            <input matInput formControlName="age" type="password">
+            <mat-error *ngIf="fetchData.age.errors && fetchData.age.errors.required">
+              Age is required
+            </mat-error>
+          </mat-form-field>
+          <mat-form-field class="input-width m-b-20">
+            <mat-label>Address</mat-label>
+            <input matInput formControlName="address" type="text">
+            <mat-error *ngIf="fetchData.address.errors && fetchData.address.errors.required">
+              Address is required
+            </mat-error>
+          </mat-form-field>
+          <button type="submit" [disabled]="!customerForm" mat-flat-button color="primary" class="m-t-20">Sign in </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>

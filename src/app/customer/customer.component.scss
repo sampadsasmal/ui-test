@@ -1,0 +1,21 @@
+h3 {
+  margin-bottom: 30px;
+  margin-top: 6px;
+
+}
+.input-width {
+  width: 300px;
+  display: block;
+  @media (max-width:767px) {
+    width: 100%;
+  }
+}
+.d-block {
+  display: block;
+}
+.d-flex{
+  display: flex;
+}
+.m-l-10{
+  margin-left: 10px;
+}
